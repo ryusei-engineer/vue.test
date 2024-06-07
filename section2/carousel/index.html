@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <script src="https://kit.fontawesome.com/6350aa1118.js" crossorigin="anonymous"></script>
+  <link rel="stylesheet" href="app.css">
+  <script src="https://cdn.jsdelivr.net/npm/vue@2.6.11/dist/vue.js"></script>
+</head>
+<body>
+  <div id="app">
+    <section class="carousel">
+      <div class="carousel__main" :key="images[active].id" v-show="active === images[active].id">
+        <img :src="images[active].img">
+      </div>
+      <div @click="prev" class="carousel__prev"><i class="fas fa-abgle-left fa-5x"></i>prev</div>
+      <div @click="next" class="carousel__next"><i class="fas fa-abgle-right fa-5x"></i>a</div>
+      <ul class="carousel__thumbnails">
+        <li></li>
+      </ul>
+    </section>
+  </div>
+  <script>
+    let app = new Vue({
+      el:'#app',
+      data(){
+        return {
+          active:0,
+          images: [
+            {id:0, img:'images/image000.jpg'},
+            {id:1, img:'images/image001.jpg'},
+            {id:2, img:'images/image002.jpg'},
+            {id:3, img:'images/image003.jpg'},
+            {id:4, img:'images/image004.jpg'},
+            {id:5, img:'images/image005.jpg'},
+            {id:6, img:'images/image006.jpg'},
+          ]
+        }
+      },
+      methods:{
+          prev(){
+
+          },
+          next(){
+            if(this.active >= this.images.length - 1){
+              this.active = 0
+            }else{
+              this.active++
+            }
+          }
+        }
+    })
+  </script>
+</body>
+</html>

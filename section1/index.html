@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <script src="https://cdn.jsdelivr.net/npm/vue@2.6.11/dist/vue.js"></script>
+</head>
+<body>
+  <div id="app">
+    {{ message }}
+    <a v-bind:href="google">googleへ</a>
+  </div>
+
+  <script>
+    let app = new Vue({
+      el: '#app',
+      data(){
+        return {
+          message:'hello',
+          google: 'https://www.google.com/search?q=vuejs&rlz=1C1DKGK_jaJP988JP988&oq=&gs_lcrp=EgZjaHJvbWUqCQgBECMYJxjqAjIJCAAQIxgnGOoCMgkIARAjGCcY6gIyCQgCECMYJxjqAjIJCAMQIxgnGOoCMgkIBBAjGCcY6gIyCQgFECMYJxjqAjIJCAYQIxgnGOoCMgkIBxAjGCcY6gLSAQsxMzc4MjE4ajBqN6gCCLACAQ&sourceid=chrome&ie=UTF-8' 
+        }
+      }
+    })
+  </script>
+</body>
+</html>
